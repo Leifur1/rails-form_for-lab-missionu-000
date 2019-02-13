@@ -470,3 +470,21 @@ Processing by StudentsController#edit as HTML
   [1m[36mStudent Load (0.2ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT 1[0m  [["id", 1]]
   Rendered students/edit.html.erb within layouts/application (2.6ms)
 Completed 200 OK in 61ms (Views: 20.6ms | ActiveRecord: 33.0ms)
+
+
+Started PATCH "/students/1" for 71.34.107.53 at 2019-02-13 19:15:36 +0000
+Processing by StudentsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"y+PTn0DoF0gx0IzHRObRqGf1YgkCnIh3wJrAHFC9hwzUosyiHpUXP5f2QwxoTtOTPtSG+qEoZVmD5J6GQLHsEA==", "student"=>{"first_name"=>"Leifur", "last_name"=>"Sigurdsson"}, "commit"=>"Update Student", "id"=>"1"}
+  [1m[35mStudent Load (0.1ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://165.227.16.205:51460/students/1
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/students/1" for 71.34.107.53 at 2019-02-13 19:15:36 +0000
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered students/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.1ms)
