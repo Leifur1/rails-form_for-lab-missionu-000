@@ -641,3 +641,19 @@ Started GET "/school_classes/new" for 71.34.107.53 at 2019-02-13 19:23:06 +0000
 Processing by SchoolClassesController#new as HTML
   Rendered school_classes/new.html.erb within layouts/application (2.9ms)
 Completed 200 OK in 22ms (Views: 21.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/school_classes" for 71.34.107.53 at 2019-02-13 19:23:23 +0000
+Processing by SchoolClassesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aFQVGwm5YBoUL19dmjJtnRUCqRhe5RsWlg0rHVxGrCF3FQomV8RgbbIJkJa2mm+mTCNN6/1R9jjVc3WHTErHPQ==", "school_class"=>{"title"=>"Math", "room_number"=>"101"}, "commit"=>"Create School class"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "school_classes" ("title", "room_number", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Math"], ["room_number", 101], ["created_at", "2019-02-13 19:23:23.870860"], ["updated_at", "2019-02-13 19:23:23.870860"]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://165.227.16.205:51460/school_classes/1
+Completed 302 Found in 6ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/school_classes/1" for 71.34.107.53 at 2019-02-13 19:23:23 +0000
+Processing by SchoolClassesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSchoolClass Load (0.3ms)[0m  SELECT  "school_classes".* FROM "school_classes" WHERE "school_classes"."id" = ? LIMIT 1  [["id", 1]]
