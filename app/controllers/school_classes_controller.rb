@@ -6,6 +6,7 @@ class SchoolClassesController < ApplicationController
   end
 
   def show
+    SchoolClass.all
   end
 
   def edit
