@@ -286,3 +286,21 @@ ArgumentError (wrong number of arguments (given 1, expected 0)):
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (48.7ms)
+
+
+Started POST "/students" for 71.34.107.53 at 2019-02-13 19:12:24 +0000
+Processing by StudentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1nkZ5TOWSWXULQpQ8uY+OLiYWGJrtgUUFj38InZOe0LJOAbYbetJEnILxZveTjwD4bm8kcgC6DpVQ6K4ZkIQXg==", "student"=>{"first_name"=>"Leifur", "last_name"=>"Sigurdsson"}, "commit"=>"Create Student"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["first_name", "Leifur"], ["last_name", "Sigurdsson"], ["created_at", "2019-02-13 19:12:24.826319"], ["updated_at", "2019-02-13 19:12:24.826319"]]
+  [1m[35m (3.1ms)[0m  commit transaction
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 5.2ms)
+
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  app/controllers/students_controller.rb:9:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (56.3ms)
